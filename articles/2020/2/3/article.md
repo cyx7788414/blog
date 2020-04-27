@@ -120,6 +120,22 @@ flags可以理解成是一个字符串数组，即以[]包裹，以逗号隔开�
 # 写在后面
 由于较少接触服务器配置，受限于技术积累，靠搜索引擎和有限的时间精力只能做到这一步了，但用以举一反三实现一些简单的功能应该是可以做到的。  
 这样弄懂了应该可以避免以后的复制粘贴，但前面提到的玄学内容暂时无力深究了，略有遗憾。
+# 更新1
+近日在尝试PHP实现RESTful风格的API时，采用了.htaccess文件在api目录内讲请求转发到固定文件进行处理，文件关键内容如下：
+```
+RewriteRule ^(.*)$   index.php?query=$1 [l,nc,qsa]
+```
+这样写并没有什么太大的问题，只是在获取全局变量$_SERVER['QUERY_STRING']时没有得到预期的结果，返回的值类似于： 
+> query=index.php&query=xxxx&a=xxx
+>
+很明显，这应该是被处理了两次造成的，虽然暂时还不明白为什么仅仅只是两次，我原本认为应该会无穷套娃的，但这样就有解决思路了，修正后的.htaccess文件内容如下：
+```
+  # 已有_query参数则直接返回，避免两遍，采用_query作为参数避免冲突
+  RewriteCond %{QUERY_STRING} ^_query= 
+  RewriteRule ^ - [L]
+  # 转为参数传入
+  RewriteRule ^(.*)$   index.php?_query=$1 [l,nc,qsa]
+```
 # 参考文献  
 1. [Apache HTTP Server Tutorial: .htaccess files](http://httpd.apache.org/docs/current/howto/htaccess.html)  
 2. [$_SERVER](https://baike.baidu.com/item/$_SERVER/4897514)
