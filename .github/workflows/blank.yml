@@ -18,13 +18,19 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: clone cyx7788414.github.io.git done
-        run: git clone git@github.com:cyx7788414/cyx7788414.github.io.git
+        run: |
+          git clone git@github.com:cyx7788414/cyx7788414.github.io.git
+          echo Clone Done
       - name: update submodule
         run: |
           cd cyx7788414.gthub.io/
+          echo CD Done
           git submodule update --init --recursive
+          echo Submodule Done
       - name: push
-        run: git push
+        run: |
+          git push
+          echo Push Done
 #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 #     - uses: actions/checkout@v2
 
