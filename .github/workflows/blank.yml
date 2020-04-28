@@ -24,16 +24,6 @@ jobs:
           ssh-key: ${{ secrets.deploy_key }}
           submodules: recursive
           path: ./cyx7788414.github.io
-#       - name: clone cyx7788414.github.io.git done
-#         run: |
-#           git clone git@github.com:cyx7788414/cyx7788414.github.io.git
-#           echo Clone Done
-#       - name: update submodule
-#         run: |
-#           cd cyx7788414.gthub.io/
-#           echo CD Done
-#           git submodule update --init --recursive
-#           echo Submodule Done
       - name: push
         run: |
           cd ./cyx7788414.github.io
@@ -41,19 +31,9 @@ jobs:
           git config --global user.email "1986340901@qq.com"
           git config --global user.name "blog actions"
           echo Config Done
-          git pull --allow-unrelated-histories
+          # git pull --allow-unrelated-histories
+          git pull
           echo Pull Done
-          git push git@github.com:cyx7788414/cyx7788414.github.io.git HEAD:master
+          # git push git@github.com:cyx7788414/cyx7788414.github.io.git HEAD:master
+          git push
           echo Push Done
-#     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#     - uses: actions/checkout@v2
-
-#     # Runs a single command using the runners shell
-#     - name: Run a one-line script
-#       run: echo Hello, world!
-
-#     # Runs a set of commands using the runners shell
-#     - name: Run a multi-line script
-#       run: |
-#         echo Add other actions to build,
-#         echo test, and deploy your project.
