@@ -27,13 +27,7 @@ jobs:
       - name: push
         run: |
           cd ./cyx7788414.github.io
-          ls -a
           git config --global user.email "1986340901@qq.com"
           git config --global user.name "blog actions"
-          echo Config Done
-          # git pull --allow-unrelated-histories
-          git pull
-          echo Pull Done
-          # git push git@github.com:cyx7788414/cyx7788414.github.io.git HEAD:master
           git push
           echo Push Done
