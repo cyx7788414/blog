@@ -37,7 +37,7 @@ jobs:
         run: |
           cd blog/
           ls -a
-          git -v
+          git --version
           git pull --allow-unrelated-history
           git push git@github.com:cyx7788414/cyx7788414.github.io.git HEAD:master
           echo Push Done
