@@ -35,7 +35,7 @@ jobs:
 #           echo Submodule Done
       - name: push
         run: |
-          cd cyx7788414.gthub.io/
+          cd blog/
           git push
           echo Push Done
 #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
