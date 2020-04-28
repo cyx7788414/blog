@@ -36,9 +36,9 @@ jobs:
       - name: push
         run: |
           cd blog/
-          ls -a
-          git --version
           git pull --allow-unrelated-histories
+          git config user.email "1986340901@qq.com"
+          git config user.name "blog actions"
           git push git@github.com:cyx7788414/cyx7788414.github.io.git HEAD:master
           echo Push Done
 #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
