@@ -36,7 +36,7 @@ jobs:
       - name: push
         run: |
           cd blog/
-          git push cyx7788414/cyx7788414.github.io HEAD:master
+          git push git@github.com:cyx7788414/cyx7788414.github.io.git HEAD:master
           echo Push Done
 #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 #     - uses: actions/checkout@v2
