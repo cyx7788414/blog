@@ -36,8 +36,7 @@ jobs:
       - name: push
         run: |
           cd blog/
-          git pull --allow-unrelated-history
-          git push origin master
+          git push --repo=cyx7788414/cyx7788414.github.io
           echo Push Done
 #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 #     - uses: actions/checkout@v2
