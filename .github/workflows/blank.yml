@@ -36,7 +36,8 @@ jobs:
       - name: push
         run: |
           cd blog/
-          git push origin HEAD:master
+          git pull origin master
+          git push origin master
           echo Push Done
 #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 #     - uses: actions/checkout@v2
