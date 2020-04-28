@@ -37,6 +37,7 @@ jobs:
         run: |
           cd blog/
           ls -a
+          git pull
           git push git@github.com:cyx7788414/cyx7788414.github.io.git HEAD:master
           echo Push Done
 #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
