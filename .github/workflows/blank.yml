@@ -23,6 +23,7 @@ jobs:
           repository: cyx7788414/cyx7788414.github.io
           ssh-key: ${{ secrets.deploy_key }}
           submodules: recursive
+          path: ./cyx7788414.github.io
 #       - name: clone cyx7788414.github.io.git done
 #         run: |
 #           git clone git@github.com:cyx7788414/cyx7788414.github.io.git
@@ -35,7 +36,8 @@ jobs:
 #           echo Submodule Done
       - name: push
         run: |
-          cd blog/
+          cd ./cyx7788414.github.io
+          ls -a
           git config --global user.email "1986340901@qq.com"
           git config --global user.name "blog actions"
           echo Config Done
