@@ -30,6 +30,7 @@ jobs:
           git config --global user.email "1986340901@qq.com"
           git config --global user.name "blog actions"
           git submodule update --recursive
+          echo Update Done
           git add *
           git commit -m 'auto publish'
           git push
