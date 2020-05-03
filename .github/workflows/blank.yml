@@ -29,7 +29,7 @@ jobs:
           cd ./cyx7788414.github.io
           git config --global user.email "1986340901@qq.com"
           git config --global user.name "blog actions"
-          git submodule update --recursive
+          git submodule update --recursive --remote
           echo Update Done
           git add *
           git commit -m 'auto publish'
