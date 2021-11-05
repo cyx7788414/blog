@@ -24,7 +24,7 @@ jobs:
           ssh-key: ${{ secrets.deploy_key }}
           submodules: recursive
           path: ./cyx7788414.github.io
-      - name: push
+      - name: Push
         run: |
           cd ./cyx7788414.github.io
           git config --global user.email "1986340901@qq.com"
@@ -35,3 +35,6 @@ jobs:
           git commit -m 'auto publish'
           git push
           echo Push Done
+      - name: Refresh
+        run: |
+          curl https://purge.jsdelivr.net/gh/cyx7788414/blog@master/
